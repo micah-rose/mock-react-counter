@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
+import './App.css';
 
 export default class App extends Component {
   constructor(){
@@ -21,13 +22,21 @@ export default class App extends Component {
     })
   }
 
+  resetCount = () => {
+    this.setState({
+      count: this.state.count - this.state.count
+    })
+  }
+
   render(){
     let {count} = this.state;
     return(
       <div>
-        <h2>Travelex Count: {count}</h2>
+        <h2>Travelex Count:</h2>
+        <p>{count}</p>
         <Button title = '+' task = { () => this.incrementCount()} />
         <Button title = '-' task = { () => this.decrementCount()} />
+        <Button title = 'Reset' task = { () => this.resetCount()} />
       </div>
     )
   }
