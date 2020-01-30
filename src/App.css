@@ -6,10 +6,16 @@
 
 div {
   display: block;
-  width: 50%;
+  width: 30%;
   padding: 5px;
   margin: auto;
   text-align: center;
+
+}
+
+h2{
+  font-size: 20px;
+
 }
 
 p {
@@ -25,6 +31,3 @@ Button {
   margin: 5px 0px;
 }
 
-.reset-btn {
-  color: red;
-}
