@@ -27,10 +27,17 @@ constructor(props){
     render(){
         return(
             <div className="chart">
-                <Bar 
+                <Pie 
                     data={this.state.chartData} 
                     options={{
-                        maintainAspectRatio: false
+                        title: {
+                            display: true,
+                            text: 'Statistics',
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: true,
+                        }
                     }}
                 />
             </div>
