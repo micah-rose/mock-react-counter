@@ -3,17 +3,32 @@ import {Bar, Line, Pie, Polar, Doughnut} from 'react-chartjs-2';
 
 class Chart extends Component {
 
-constructor(){
+constructor(props){
     super(props);
+    this.state={
+        chartData: {
+            labels: [
+                'Daily',
+                'Weekly',
+                'Monthly'
+            ],
+            datasets:[
+                {
+                    label: 'Statistics',
+                    data: [3, 17, 44],
+                    backgroundColor: [
+                        'purple', 'teal', 'yellow'
+                    ]
+                }]
+        }
+    }
 }
 
     render(){
         return(
             <div className="chart">
                 <Bar 
-                    data={data} 
-                   //width={100}
-                    //height={50} 
+                    data={this.state.chartData} 
                     options={{
                         maintainAspectRatio: false
                     }}
