@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Button from './components/Button';
 import './App.css';
 import Chart from './components/Chart';
+import GoogleChart from './components/GoogleChart';
 
 export default class App extends Component {
   constructor(){
@@ -38,7 +39,8 @@ export default class App extends Component {
         <Button title = '+' task = { () => this.incrementCount()} />
         <Button title = '-' task = { () => this.decrementCount()} />
         <Button title = 'Reset' task = { () => this.resetCount()} />
-        <Chart />  
+        <Chart />
+        <GoogleChart />
       </div>
     )
   }

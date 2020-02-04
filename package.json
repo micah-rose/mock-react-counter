@@ -12,6 +12,7 @@
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.12.0",
     "react-gauge-chart": "^0.2.5",
+    "react-google-charts": "^3.0.15",
     "react-scripts": "3.3.0"
   },
   "scripts": {
