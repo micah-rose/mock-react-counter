@@ -4,12 +4,14 @@ import React, {Component} from "react";
 import Charts from "react-google-charts";
 
 const options = {
-  width: 400,
-  height: 120,
-  redFrom: 90,
-  redTo: 100,
-  yellowFrom: 75,
-  yellowTo: 90,
+  width: 500,
+  height: 620,
+  redFrom: 0,
+  redTo: 50,
+  yellowFrom: 50,
+  yellowTo: 65,
+  greenFrom: 65,
+  greenTo: 100,
   minorTicks: 5
 };
 
@@ -17,19 +19,19 @@ const getRandomNumber = () => {
   return Math.random() * 100;
 };
 
-class GoogleChart extends Component {
+class GaugeChart extends Component {
   state = {
-    networkSpeed: 1,
+    //networkSpeed: 1,
     memory: 80,
-    cpu: 55
+    //cpu: 55
   };
   intervalID = null;
   getData = () => {
     return [
       ["Label", "Value"],
-      ["Memory", this.state.memory],
-      ["CPU", this.state.cpu],
-      ["Network", this.state.networkSpeed]
+      ["Travelex", this.state.memory],
+      //["Resort Credits", this.state.cpu],
+      //["Marketing Transfers", this.state.networkSpeed]
     ];
   };
 
@@ -44,8 +46,8 @@ class GoogleChart extends Component {
       this.setState(state => {
         return {
           ...state,
-          networkSpeed: getRandomNumber(),
-          cpu: getRandomNumber(),
+          //networkSpeed: getRandomNumber(),
+          //cpu: getRandomNumber(),
           memory: getRandomNumber()
         };
       });
@@ -69,7 +71,7 @@ class GoogleChart extends Component {
   }
 }
 
-export default GoogleChart;
+export default GaugeChart;
 
 //const rootElement = document.getElementById("root");
 //ReactDOM.render(<GoogleChart />, rootElement);
