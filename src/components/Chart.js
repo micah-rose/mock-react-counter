@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie, Polar, Doughnut} from 'react-chartjs-2';
+import {Bar, Line, Pie, Polar, Doughnut, Radar, Bubble} from 'react-chartjs-2';
+//import GaugeChart from 'react-gauge-chart';
 
 class Chart extends Component {
 
@@ -17,7 +18,7 @@ constructor(props){
                     label: 'Statistics',
                     data: [3, 17, 44],
                     backgroundColor: [
-                        'purple', 'teal', 'yellow'
+                        'red', 'yellow', 'green'
                     ]
                 }]
         }
@@ -27,7 +28,7 @@ constructor(props){
     render(){
         return(
             <div className="chart">
-                <Pie 
+                <Doughnut 
                     data={this.state.chartData} 
                     options={{
                         title: {
