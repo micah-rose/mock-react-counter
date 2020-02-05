@@ -1,6 +1,5 @@
 
 import React, {Component} from "react";
-//import ReactDOM from "react-dom";
 import Charts from "react-google-charts";
 
 const options = {

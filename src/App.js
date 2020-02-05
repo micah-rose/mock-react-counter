@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
 import './App.css';
-import Chart from './components/Chart';
 import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
+import TextBox from './components/TextBox';
 
 export default class App extends Component {
   constructor(){
@@ -42,6 +42,7 @@ export default class App extends Component {
         <Button title = 'Reset' task = { () => this.resetCount()} />
         <GoogleChart />
         <Form />
+        <TextBox />
       </div>
     )
   }

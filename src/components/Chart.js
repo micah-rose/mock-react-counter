@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie, Polar, Doughnut, Radar, Bubble} from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
 //import GaugeChart from 'react-gauge-chart';
 
 class Chart extends Component {
