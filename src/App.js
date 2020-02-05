@@ -4,6 +4,7 @@ import './App.css';
 import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
 import TextBox from './components/TextBox';
+import Date from './components/DateTime';
 
 export default class App extends Component {
   constructor(){
@@ -35,14 +36,23 @@ export default class App extends Component {
     let {count} = this.state;
     return(
       <div>
-        <h2>Travelex Count:</h2>
-        <p>{count}</p>
-        <Button title = '+' task = { () => this.incrementCount()} />
-        <Button title = '-' task = { () => this.decrementCount()} />
-        <Button title = 'Reset' task = { () => this.resetCount()} />
-        <GoogleChart />
-        <Form />
-        <TextBox />
+        <div className="date">
+          <Date />
+        </div>
+        <div className="counter">
+          <h2>Travelex Count:</h2>
+          <p>{count}</p>
+          <Button title = '+' task = { () => this.incrementCount()} />
+          <Button title = '-' task = { () => this.decrementCount()} />
+          <Button title = 'Reset' task = { () => this.resetCount()} />
+        </div>
+        <div className="gauge">
+          <GoogleChart />
+        </div>
+        <div className="user-input">
+          <Form />
+          <TextBox />
+        </div>
       </div>
     )
   }

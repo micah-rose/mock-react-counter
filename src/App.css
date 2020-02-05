@@ -4,13 +4,35 @@
   font-family: 'Martel Sans', sans-serif;
 }
 
-div {
+.date {
   display: block;
-  /*width: 30%;
+  width: 30%;
   padding: 5px;
-  margin: auto;*/
+  margin: auto;
   text-align: center;
+  border: solid 2px red;
+}
 
+.counter{
+  display: block;
+  text-align: center;
+  margin: 20px;
+}
+
+.gauge {
+  display: inline-block;
+  width: 50%;
+  border: solid 2px red;
+  margin: 30px;
+}
+
+.user-input {
+  border: solid 2px red;
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  font-size: 20px;
 }
 
 h2{

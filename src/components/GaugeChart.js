@@ -71,6 +71,3 @@ class GaugeChart extends Component {
 }
 
 export default GaugeChart;
-
-//const rootElement = document.getElementById("root");
-//ReactDOM.render(<GoogleChart />, rootElement);
