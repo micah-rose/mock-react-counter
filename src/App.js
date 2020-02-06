@@ -37,7 +37,7 @@ export default class App extends Component {
     return(
       <div>
         <div className="date">
-          <Date />
+          <Date format="MMMM D, YYYY"/>
         </div>
         <div className="counter">
           <h2>Travelex Count:</h2>
