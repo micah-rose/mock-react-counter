@@ -4,7 +4,7 @@ import './App.css';
 import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
 import TextBox from './components/TextBox';
-import Date from './components/DateTime';
+import Date from './components/CurrentDate';
 
 export default class App extends Component {
   constructor(){
