@@ -39,19 +39,23 @@ export default class App extends Component {
         <div className="date">
           <Date format="MMMM D, YYYY"/>
         </div>
+        <div className="user-input">
+          <div className="form">
+            <Form />
+          </div>
+          <div className="textbox">
+            <TextBox />
+          </div>
+        </div>
+        <div className="gauge">
+          <GoogleChart />
+        </div>
         <div className="counter">
           <h2>Travelex Count:</h2>
           <p>{count}</p>
           <Button title = '+' task = { () => this.incrementCount()} />
           <Button title = '-' task = { () => this.decrementCount()} />
           <Button title = 'Reset' task = { () => this.resetCount()} />
-        </div>
-        <div className="gauge">
-          <GoogleChart />
-        </div>
-        <div className="user-input">
-          <Form />
-          <TextBox />
         </div>
       </div>
     )
