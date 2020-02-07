@@ -5,6 +5,7 @@ import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
 import TextBox from './components/TextBox';
 import Date from './components/CurrentDate';
+import StatSlider from './components/Slider';
 
 export default class App extends Component {
   constructor(){
@@ -51,6 +52,7 @@ export default class App extends Component {
         <div className="gauge">
           <GoogleChart />
         </div>
+        <StatSlider />
         <div className="counter">
           <h2>Travelex Count:</h2>
           <p>{count}</p>
