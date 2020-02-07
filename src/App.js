@@ -49,10 +49,13 @@ export default class App extends Component {
             <TextBox />
           </div>
         </div>
+        <div className="slider">
+          <StatSlider />
+        </div>
         <div className="gauge">
           <GoogleChart />
         </div>
-        <StatSlider />
+
         <div className="counter">
           <h2>Travelex Count:</h2>
           <p>{count}</p>

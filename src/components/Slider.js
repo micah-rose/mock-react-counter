@@ -13,31 +13,170 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const marks = [
+const dailyMarks = [
   {
     value: 0,
-    label: '0°C',
+    label: '0',
+  },
+  {
+    value: 10,
+    label: '1',
   },
   {
     value: 20,
-    label: '20°C',
+    label: '2',
   },
   {
-    value: 37,
-    label: '37°C',
+    value: 30,
+    label: '3',
+  },
+  {
+    value: 40,
+    label: '4',
+  },
+  {
+    value: 50,
+    label: '5',
+  },
+  {
+    value: 60,
+    label: '6',
+  },
+  {
+    value: 70,
+    label: '7',
+  },
+  {
+    value: 80,
+    label: '8',
+  },
+  {
+    value: 90,
+    label: '9',
   },
   {
     value: 100,
-    label: '100°C',
+    label: '10',
   },
 ];
 
+const weeklyMarks = [
+    {
+        value: 0,
+        label: '0',
+      },
+
+      {
+        value: 20,
+        label: '5',
+      },
+
+      {
+        value: 40,
+        label: '10',
+      },
+
+      {
+        value: 60,
+        label: '15',
+      },
+
+      {
+        value: 80,
+        label: '20',
+      },
+
+      {
+        value: 100,
+        label: '25',
+      },
+    ];
+
+  const monthlyMarks = [
+    {
+        value: 0,
+        label: '0',
+      },
+      {
+        value: 10,
+        label: '5',
+      },
+      {
+        value: 20,
+        label: '10',
+      },
+      {
+        value: 30,
+        label: '15',
+      },
+      {
+        value: 40,
+        label: '20',
+      },
+      {
+        value: 50,
+        label: '25',
+      },
+      {
+        value: 60,
+        label: '30',
+      },
+      {
+        value: 70,
+        label: '35',
+      },
+      {
+        value: 80,
+        label: '40',
+      },
+      {
+        value: 90,
+        label: '45',
+      },
+      {
+        value: 100,
+        label: '50',
+      },
+    ];
+
+  const incentiveMarks = [
+    {
+      value: 0,
+      label: '0',
+    },
+    {
+      value: 15,
+      label: '$15',
+    },
+    {
+      value: 60,
+      label: '$50',
+    },
+    {
+      value: 100,
+      label: '$100',
+    },
+  ];
+
 function valuetext(value) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
+//fix this function to be specific to each type of scale
 function valueLabelFormat(value) {
-  return marks.findIndex(mark => mark.value === value) + 1;
+  return dailyMarks.findIndex(mark => mark.value === value) + 1;
+}
+
+function valueLabelFormatTwo(value) {
+    return weeklyMarks.findIndex(mark => mark.value === value) + 1;
+}
+
+function valueLabelFormatThree(value) {
+    return monthlyMarks.findIndex(mark => mark.value === value) + 1;
+}
+
+function valueLabelFormatFour(value) {
+    return incentiveMarks.findIndex(mark => mark.value === value) + 1;
 }
 
 export default function DiscreteSlider() {
@@ -45,48 +184,9 @@ export default function DiscreteSlider() {
 
   return (
     <div className={classes.root}>
-      <Typography id="discrete-slider" gutterBottom>
-        Temperature
-      </Typography>
-      <Slider
-        defaultValue={30}
-        getAriaValueText={valuetext}
-        aria-labelledby="discrete-slider"
-        valueLabelDisplay="auto"
-        step={10}
-        marks
-        min={10}
-        max={110}
-      />
-      <div className={classes.margin} />
-      <Typography id="discrete-slider-small-steps" gutterBottom>
-        Small steps
-      </Typography>
-      <Slider
-        defaultValue={0.00000005}
-        getAriaValueText={valuetext}
-        aria-labelledby="discrete-slider-small-steps"
-        step={0.00000001}
-        marks
-        min={-0.00000005}
-        max={0.0000001}
-        valueLabelDisplay="auto"
-      />
-      <div className={classes.margin} />
-      <Typography id="discrete-slider-custom" gutterBottom>
-        Custom marks
-      </Typography>
-      <Slider
-        defaultValue={20}
-        getAriaValueText={valuetext}
-        aria-labelledby="discrete-slider-custom"
-        step={10}
-        valueLabelDisplay="auto"
-        marks={marks}
-      />
-      <div className={classes.margin} />
+    <div className={classes.margin} />
       <Typography id="discrete-slider-restrict" gutterBottom>
-        Restricted values
+        Today's Goal:
       </Typography>
       <Slider
         defaultValue={20}
@@ -95,18 +195,47 @@ export default function DiscreteSlider() {
         aria-labelledby="discrete-slider-restrict"
         step={null}
         valueLabelDisplay="auto"
-        marks={marks}
+        marks={dailyMarks}
       />
-      <div className={classes.margin} />
-      <Typography id="discrete-slider-always" gutterBottom>
-        Always visible
+
+    <div className={classes.margin} />
+      <Typography id="discrete-slider-restrict" gutterBottom>
+        Weekly Goal:
       </Typography>
       <Slider
-        defaultValue={80}
+        defaultValue={20}
+        valueLabelFormat={valueLabelFormatTwo}
+        getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider-restrict"
+        step={null}
+        valueLabelDisplay="auto"
+        marks={weeklyMarks}
+      />
+
+    <div className={classes.margin} />
+      <Typography id="discrete-slider-restrict" gutterBottom>
+        Monthly Goal:
+      </Typography>
+      <Slider
+        defaultValue={20}
+        valueLabelFormat={valueLabelFormatThree}
+        getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider-restrict"
+        step={null}
+        valueLabelDisplay="auto"
+        marks={monthlyMarks}
+      />
+
+    <div className={classes.margin} />
+      <Typography id="discrete-slider-always" gutterBottom>
+        Incentive Goal: 
+      </Typography>
+      <Slider
+        defaultValue={70}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
         step={10}
-        marks={marks}
+        marks={incentiveMarks}
         valueLabelDisplay="on"
       />
     </div>

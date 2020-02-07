@@ -25,7 +25,13 @@
 .gauge {
   display: block;
   width: 50%;
-  margin: 10px;
+  margin-bottom: 50px;
+}
+
+.slider {
+  display: block;
+  margin: 25px;
+
 }
 
 .counter{

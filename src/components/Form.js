@@ -21,7 +21,12 @@ class Form extends Component {
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
+                <label className = 'eid'>
+                    EID:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <br></br>
+                <label className='policy-num'>
                     Policy Number: 
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
