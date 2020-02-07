@@ -36,6 +36,7 @@ export default class App extends Component {
     let {count} = this.state;
     return(
       <div>
+        <h1>Associate Name</h1>
         <div className="date">
           <Date format="MMMM D, YYYY"/>
         </div>
