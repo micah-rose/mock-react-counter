@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Button from './components/Button';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from './components/Button';
 import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
 import TextBox from './components/TextBox';
@@ -63,6 +64,8 @@ export default class App extends Component {
           <Button title = '-' task = { () => this.decrementCount()} />
           <Button title = 'Reset' task = { () => this.resetCount()} />
         </div>
+
+        
       </div>
     )
   }

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Button from './Button.js';
+import Buttons from 'react-bootstrap/Button';
 
 class Form extends Component {
     constructor(props){
@@ -23,15 +25,17 @@ class Form extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label className = 'eid'>
                     EID:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" value={this.state.value} placeholder='Enter your EID' onChange={this.handleChange} />
                 </label>
                 <br></br>
                 <label className='policy-num'>
                     Policy Number: 
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" value={this.state.value} placeholder= 'Enter Policy #' onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Submit" />
+                <Button title="Submit" variant="info" type='submit'/>
             </form>
+
+            
         );
     }
 }

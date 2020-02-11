@@ -15,7 +15,10 @@
   display: inline-block;
   margin: 20px;
   padding: 10px;
-  font-size: 15px;
+}
+
+.eid, .policy-num {
+  font-size: 20px;
 }
 
 .textbox {
@@ -55,8 +58,10 @@ p {
 }
 
 Button {
+  display: block;
   font-size: 25px;
   font-weight: bold;
   padding: 0px 20px;
   margin: 5px 0px;
+
 }
