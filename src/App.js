@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from './components/Button';
+import Buttons from './components/Button';
 import GoogleChart from './components/GaugeChart';
 import Form from './components/Form';
 import TextBox from './components/TextBox';
@@ -60,12 +60,10 @@ export default class App extends Component {
         <div className="counter">
           <h2>Travelex Count:</h2>
           <p>{count}</p>
-          <Button title = '+' task = { () => this.incrementCount()} />
-          <Button title = '-' task = { () => this.decrementCount()} />
-          <Button title = 'Reset' task = { () => this.resetCount()} />
-        </div>
-
-        
+          <Buttons title = '+' task = { () => this.incrementCount()} />
+          <Buttons title = '-' task = { () => this.decrementCount()} />
+          <Buttons title = 'Reset' task = { () => this.resetCount()} />
+        </div>      
       </div>
     )
   }

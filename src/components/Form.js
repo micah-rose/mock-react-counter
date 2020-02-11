@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Button from './Button.js';
-import Buttons from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
+
+import '../App.css';
 
 class Form extends Component {
     constructor(props){
@@ -32,10 +33,8 @@ class Form extends Component {
                     Policy Number: 
                     <input type="text" value={this.state.value} placeholder= 'Enter Policy #' onChange={this.handleChange} />
                 </label>
-                <Button title="Submit" variant="info" type='submit'/>
-            </form>
-
-            
+                <Button className="submit-btn" variant="info" type='submit' size="lg">Submit</Button>
+            </form>           
         );
     }
 }
